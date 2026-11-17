@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 5vw;
+  border-bottom: 1px solid var(--border);
+  background: white;
+}
+.brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.badge {
+  background: #fff1ce;
+  color: #6c4700;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  padding: 0.4rem 0.8rem;
+}
+main {
+  max-width: 1240px;
+  margin: 2.5rem auto;
+  padding: 0 24px;
+  min-height: 70vh;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+.login {
+  max-width: 680px;
+  margin: 5rem auto;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-top: 5px solid var(--brand);
+}
+#google-button {
+  min-height: 44px;
+  margin: 2rem 0 1rem;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.toolbar button {
+  margin: 4px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.stats strong {
+  display: block;
+  font-size: 2rem;
+}
+.table-wrap {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 540px;
+}
+th,
+td {
+  padding: 1rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+th {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+td button {
+  margin: 3px;
+  font-size: 0.85rem;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem;
+  font-size: 0.8rem;
+}
+[hidden] {
+  display: none !important;
+}
+.sr-only,
+.skip:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .login {
+    margin: 2rem auto;
+  }
+  main {
+    padding: 0 12px;
+    margin: 1.5rem auto;
+  }
+  .card {
+    padding: 1.1rem;
+  }
+  button {
+    min-height: 44px;
+  }
+}

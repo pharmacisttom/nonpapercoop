@@ -1,0 +1,18 @@
+[Unit]
+Description=NonPaperCoop isolated TEST only
+After=network.target
+[Service]
+User=nonpapercoop-test
+Group=nonpapercoop-test
+WorkingDirectory=/srv/nonpapercoop-test/current
+Environment=NODE_ENV=test
+EnvironmentFile=/etc/nonpapercoop-test/app.env
+ExecStart=/usr/bin/node apps/api/src/server.js
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+[Install]
+WantedBy=multi-user.target

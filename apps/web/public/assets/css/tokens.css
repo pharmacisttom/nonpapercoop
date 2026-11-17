@@ -1,0 +1,83 @@
+:root {
+  --ink: #143b3b;
+  --muted: #506968;
+  --brand: #006859;
+  --surface: #fff;
+  --background: #f2f6f5;
+  --border: #ccdcd8;
+  --danger: #ad2831;
+  --radius: 16px;
+  --shadow: 0 10px 35px #123b3310;
+  font-family: Tahoma, "Noto Sans Thai", sans-serif;
+  color: var(--ink);
+  background: var(--background);
+  font-size: 16px;
+  line-height: 1.65;
+}
+* {
+  box-sizing: border-box;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  background: var(--brand);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+button.secondary {
+  background: #e4eeeb;
+  color: var(--ink);
+}
+button.danger {
+  background: var(--danger);
+}
+:focus-visible {
+  outline: 3px solid #b06600;
+  outline-offset: 3px;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.4;
+}
+h2 {
+  font-size: 1.2rem;
+}
+small,
+.eyebrow {
+  color: var(--muted);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  font-weight: bold;
+}
+.swal2-container {
+  z-index: 20000;
+}
+.swal2-popup {
+  font-family: inherit;
+  max-width: calc(100vw - 24px);
+}
+.swal2-confirm {
+  background: var(--brand) !important;
+}
+.swal2-input,
+.swal2-select {
+  max-width: 90%;
+}

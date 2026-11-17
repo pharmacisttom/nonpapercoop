@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NonPaperCoop — TEST</title>
+    <link rel="stylesheet" href="/vendor/sweetalert2.css" />
+    <link rel="stylesheet" href="/vendor/datatables.css" />
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <script defer src="/vendor/jquery.js"></script>
+    <script defer src="/vendor/sweetalert2.js"></script>
+    <script defer src="/vendor/datatables.js"></script>
+    <script defer src="/assets/js/core/alerts.js"></script>
+    <script defer src="/assets/js/enterprise-ui.js"></script>
+    <script defer src="/assets/js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+    <header id="public-header">
+      <a href="/" class="brand"
+        ><span class="brand-symbol" aria-hidden="true">n<span>p</span></span
+        ><span class="brand-copy"
+          >NonPaperCoop<small>COOPERATIVE WORKSPACE</small></span
+        ></a
+      ><strong class="badge"
+        ><span class="status-dot"></span> TEST WORKSPACE</strong
+      >
+    </header>
+    <main id="main">
+      <section id="login" class="login-layout">
+        <div class="login-story">
+          <p class="eyebrow">LESS PAPER. MORE POSSIBILITIES.</p>
+          <h1>ทุกเอกสาร เชื่อมต่อกัน<br />ทุกงาน เดินหน้าได้</h1>
+          <p>
+            พื้นที่ทำงานเอกสารของสหกรณ์<br />จัดการ ส่งต่อ และติดตามอย่างเป็นระบบในที่เดียว
+          </p>
+          <div class="paper-illustration" aria-hidden="true">
+            <div class="paper-back"></div>
+            <div class="paper-front">
+              <strong>np</strong><i></i><i></i><i></i>
+              <hr />
+              <small>✓ ทุกขั้นตอนมีเรื่องราว</small>
+            </div>
+            <div class="illustration-tag">● CONNECTED WORKSPACE</div>
+          </div>
+          <small class="story-footnote">ออกแบบเพื่อการทำงานร่วมกันของสหกรณ์</small>
+        </div>
+        <div class="login-aside">
+          <div class="login-panel">
+            <span class="section-kicker">ยินดีต้อนรับกลับ</span>
+            <h2>เริ่มวันทำงาน<br />ที่เป็นระเบียบกว่าเดิม</h2>
+            <p class="muted">
+              เข้าสู่พื้นที่ทำงานด้วยบัญชี Google<br />ที่ได้รับอนุมัติจากผู้ดูแลระบบ
+            </p>
+            <div id="google-button" aria-label="เข้าสู่ระบบด้วย Google"></div>
+            <button id="refresh-google" class="secondary" hidden>
+              เริ่มเข้าสู่ระบบใหม่
+            </button>
+            <p id="login-status" role="status">กำลังเตรียม Google Sign-in…</p>
+            <div class="login-divider"></div>
+            <div class="privacy-note">
+              <span aria-hidden="true">✓</span>
+              <div>
+                <strong>พื้นที่ทำงานเฉพาะผู้ได้รับอนุญาต</strong
+                ><small
+                  >ยังไม่มีสิทธิ์เข้าใช้งาน? ติดต่อผู้ดูแลสหกรณ์<br />ไม่มีการสมัครบัญชีผ่านเว็บไซต์</small
+                >
+              </div>
+            </div>
+            <p class="test-note">สภาพแวดล้อม TEST · ใช้ข้อมูลสมมติเท่านั้น</p>
+          </div>
+        </div>
+      </section>
+      <section id="workspace" hidden>
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">พื้นที่ทำงาน</p>
+            <h1>ภาพรวมเอกสาร</h1>
+            <p id="identity"></p>
+          </div>
+          <div>
+            <button id="reauth">ยืนยันตัวตนซ้ำด้วย Google</button
+            ><button id="logout" class="secondary">ออกจากระบบ</button>
+          </div>
+        </div>
+        <div class="stats">
+          <article class="card">
+            <small>เอกสารของฉัน</small><strong id="count">0</strong>
+          </article>
+          <article class="card">
+            <small>ขั้นตอนปัจจุบัน</small><strong>P0 / P1</strong>
+          </article>
+          <article class="card">
+            <small>การอนุมัติและลงนาม</small>
+            <p>ยังไม่เปิดใช้งาน · รอ Assurance Policy</p>
+          </article>
+        </div>
+        <section class="card">
+          <div class="toolbar">
+            <h2>ทะเบียนเอกสารร่าง</h2>
+            <button id="new-document">สร้างเอกสารร่าง</button>
+          </div>
+          <p>รายการนี้เป็น Metadata สำหรับทดสอบ ยังไม่รองรับไฟล์แนบ</p>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">
+                เอกสารของฉัน
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">ชื่อเอกสาร</th>
+                  <th scope="col">ประเภท</th>
+                  <th scope="col">สถานะ</th>
+                  <th scope="col">จัดการ</th>
+                </tr>
+              </thead>
+              <tbody id="documents"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="admin" class="card" hidden>
+          <div class="toolbar">
+            <h2>ผู้ใช้งานที่ได้รับอนุมัติ</h2>
+            <button id="new-user">เพิ่ม Google Identity</button>
+          </div>
+          <p>การเปลี่ยนสิทธิ์ต้องยืนยันตัวตนซ้ำ และจะเพิกถอน Session เดิม</p>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">
+                จัดการผู้ใช้
+              </caption>
+              <thead>
+                <tr>
+                  <th>อีเมล</th>
+                  <th>บทบาท</th>
+                  <th>สถานะ</th>
+                  <th>จัดการ</th>
+                </tr>
+              </thead>
+              <tbody id="users"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="public-footer">
+      <span>© NonPaperCoop</span><span>ทำงานร่วมกัน ด้วยเอกสารที่เป็นระบบ</span>
+    </footer>
+  </body>
+</html>

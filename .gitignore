@@ -1,0 +1,11 @@
+node_modules/
+.npm-cache/
+.local/
+.env
+storage/
+playwright-report/
+test-results/
+*.log
+artifacts/admin-bootstrap.json
+artifacts/google-client-setup.json
+artifacts/
